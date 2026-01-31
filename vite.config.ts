@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // Base URL for GitHub Pages deployment
   // Change 'portfolio-academico' to your actual repository name
-  base: './',
+  base: '/Portafoliovicente/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
