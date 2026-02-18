@@ -1,5 +1,6 @@
 import { Header } from '@/app/components/Header';
 import { Hero } from '@/app/components/Hero';
+import { Activities } from '@/app/components/Activities';
 import { Presentation } from '@/app/components/Presentation';
 import { Profile } from '@/app/components/Profile';
 import { TechnicalInfo } from '@/app/components/TechnicalInfo';
