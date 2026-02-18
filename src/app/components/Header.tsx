@@ -6,7 +6,9 @@ export function Header() {
   
   const navLinks = [
     { href: '#inicio', label: 'Inicio' },
-    { href: '#actividades', label: 'Actividades' },
+    { href: '#evidencias', label: 'Evidencias' },
+    { href: '#practicas', label: 'Prácticas' },
+    { href: '#documentacion', label: 'Documentación' },
     { href: '#contacto', label: 'Contacto' }
   ];
 
