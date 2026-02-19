@@ -32,6 +32,11 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_CONTACT: ${{ vars.VITE_EMAILJS_TEMPLATE_CONTACT }}
+          VITE_EMAILJS_TEMPLATE_AUTOREPLY: ${{ vars.VITE_EMAILJS_TEMPLATE_AUTOREPLY }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ vars.VITE_EMAILJS_PUBLIC_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
