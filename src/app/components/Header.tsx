@@ -1,16 +1,15 @@
+import { Link } from 'react-router-dom';
 import { Shield, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#evidencias', label: 'Evidencias' },
-    { href: '#practicas', label: 'Prácticas' },
-    { href: '#documentacion', label: 'Documentación' },
-    { href: '#contacto', label: 'Contacto' }
-  ];
+const navLinks = [
+  { to: '/', label: 'Inicio' },
+  { to: '/actividades', label: 'Actividades' },
+  { to: '/#contacto', label: 'Contacto' },
+];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-[#d4a574]/20">
@@ -31,14 +30,14 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <Link
+                key={link.to}
+                to={link.to}
                 className="text-sm font-mono text-[#d4a574]/80 hover:text-[#cc6633] transition-colors duration-300 relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#cc6633] group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -63,14 +62,14 @@ export function Header() {
           <nav className="lg:hidden py-4 border-t border-[#d4a574]/20">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
+                <Link
+                  key={link.to}
+                  to={link.to}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-sm font-mono text-[#d4a574]/80 hover:text-[#cc6633] transition-colors duration-300 py-2"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 border-t border-[#d4a574]/20 flex flex-col gap-1">
                 <span className="text-xs text-[#d4a574]/60 font-mono">CNO V - Seguridad Informática</span>
