@@ -6,7 +6,8 @@ import { Footer } from '@/app/components/Footer';
 import { HomePage } from '@/app/pages/HomePage';
 import { ActivitiesIndex } from '@/app/pages/ActivitiesIndex';
 import { ActivityPage } from '@/app/pages/ActivityPage';
-import { ContactForm } from './components/ContactForm';
+import { ProjectsIndex } from '@/app/pages/ProjectsIndex';
+import { ProjectPage } from '@/app/pages/ProjectsPage';
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/actividades" element={<ActivitiesIndex />} />
             <Route path="/actividades/:id" element={<ActivityPage />} />
+            <Route path="/proyectos" element={<ProjectsIndex />} />
+            <Route path="/proyectos/:id" element={<ProjectPage />} />
           </Routes>
 
           <Footer />

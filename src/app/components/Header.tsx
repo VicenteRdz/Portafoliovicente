@@ -8,6 +8,7 @@ export function Header() {
 const navLinks = [
   { to: '/', label: 'Inicio' },
   { to: '/actividades', label: 'Actividades' },
+  { to: '/proyectos', label: 'Proyectos' },
   { to: '/#contacto', label: 'Contacto' },
 ];
 
