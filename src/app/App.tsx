@@ -8,6 +8,10 @@ import { ActivitiesIndex } from '@/app/pages/ActivitiesIndex';
 import { ActivityPage } from '@/app/pages/ActivityPage';
 import { ProjectsIndex } from '@/app/pages/ProjectsIndex';
 import { ProjectPage } from '@/app/pages/ProjectsPage';
+import { HallOfFameIndex } from '@/app/pages/HallOfFameIndex';
+import { HallOfFamePage } from '@/app/pages/HallOfFamePage';
+import { SqlInjectionIndex } from '@/app/pages/SqlInjectionIndex';
+import { SqlInjectionLabPage } from '@/app/pages/SqlInjectionLabPage';
 
 export default function App() {
   return (
@@ -22,6 +26,10 @@ export default function App() {
             <Route path="/actividades/:id" element={<ActivityPage />} />
             <Route path="/proyectos" element={<ProjectsIndex />} />
             <Route path="/proyectos/:id" element={<ProjectPage />} />
+            <Route path="/hall-of-fame" element={<HallOfFameIndex />} />
+            <Route path="/hall-of-fame/:id" element={<HallOfFamePage />} />
+            <Route path="/hall-of-fame/sql-injection/labs" element={<SqlInjectionIndex />} />
+            <Route path="/hall-of-fame/sql-injection/labs/:id" element={<SqlInjectionLabPage />} />
           </Routes>
 
           <Footer />

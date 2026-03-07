@@ -9,6 +9,7 @@ const navLinks = [
   { to: '/', label: 'Inicio' },
   { to: '/actividades', label: 'Actividades' },
   { to: '/proyectos', label: 'Proyectos' },
+  { to: '/hall-of-fame', label: 'Road to Hall of Fame' },
   { to: '/#contacto', label: 'Contacto' },
 ];
 
