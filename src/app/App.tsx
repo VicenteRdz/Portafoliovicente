@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Header } from '@/app/components/Header';
+import { HashRouter, Routes, Route } from 'react-router-dom';import { Header } from '@/app/components/Header';
 import { Footer } from '@/app/components/Footer';
 
 // páginas
@@ -18,7 +17,7 @@ import { PD02QuizPage } from '@/app/pages/pd02/PD02QuizPage';
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <div className="min-h-screen bg-[#0a0a0a] text-[#d4a574] overflow-x-hidden">
         <div className="relative z-10">
           <Header />
@@ -41,6 +40,6 @@ export default function App() {
           <Footer />
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
