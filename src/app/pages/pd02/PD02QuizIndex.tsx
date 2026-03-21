@@ -88,6 +88,16 @@ export function PD02QuizIndex() {
           ))}
         </div>
       </div>
+      <br />
+      <div className="mb-6">
+          <Link
+            to="/proyectos/proj-02"
+            className="inline-flex items-center gap-2 font-mono text-[#d4a574]/70 hover:text-[#cc6633] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Volver a PD02
+          </Link>
+        </div>
     </section>
   );
 }
