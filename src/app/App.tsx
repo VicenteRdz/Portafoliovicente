@@ -12,6 +12,9 @@ import { HallOfFameIndex } from '@/app/pages/HallOfFameIndex';
 import { HallOfFamePage } from '@/app/pages/HallOfFamePage';
 import { SqlInjectionIndex } from '@/app/pages/SqlInjectionIndex';
 import { SqlInjectionLabPage } from '@/app/pages/SqlInjectionLabPage';
+import { PD02PlatformsPage } from '@/app/pages/pd02/PD02PlatformsPage';
+import { PD02QuizIndex } from '@/app/pages/pd02/PD02QuizIndex';
+import { PD02QuizPage } from '@/app/pages/pd02/PD02QuizPage';
 
 export default function App() {
   return (
@@ -30,6 +33,9 @@ export default function App() {
             <Route path="/hall-of-fame/:id" element={<HallOfFamePage />} />
             <Route path="/hall-of-fame/sql-injection/labs" element={<SqlInjectionIndex />} />
             <Route path="/hall-of-fame/sql-injection/labs/:id" element={<SqlInjectionLabPage />} />
+            <Route path="/proyectos/proj-02/fase-1" element={<PD02PlatformsPage />} />
+            <Route path="/proyectos/proj-02/fase-2" element={<PD02QuizIndex />} />
+            <Route path="/proyectos/proj-02/fase-2/escenario/:id" element={<PD02QuizPage />} />
           </Routes>
 
           <Footer />

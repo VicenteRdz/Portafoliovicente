@@ -1,5 +1,7 @@
 import React from 'react';
 import { PROJECTS } from '@/app/data/projects';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 const Project1 = () => {
 
@@ -17,6 +19,16 @@ const Project1 = () => {
         <h1 className="text-2xl sm:text-3xl font-mono text-[#d4a574] mb-6">
           {project.title}
         </h1>
+
+        <div className="mb-6">
+          <Link
+            to="/proyectos"
+            className="inline-flex items-center gap-2 font-mono text-[#d4a574]/70 hover:text-[#cc6633] transition-colors"
+          >
+          <ArrowLeft className="w-4 h-4" />
+            Volver a Proyectos
+          </Link>
+        </div>
 
 
         {/* Introducción */}
