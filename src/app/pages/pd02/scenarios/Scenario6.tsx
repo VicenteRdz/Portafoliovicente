@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { PHISHING_QUIZ } from '@/app/data/phishingQuiz';
 import SimulatedEmailCard from '@/app/components/phishing/SimulatedEmailCard';
 import FeedbackCard from '@/app/components/phishing/FeedbackCard';
+import { saveAnswer } from '@/app/utils/quizStorage';
 
 type ResultStatus = 'correct' | 'partial' | 'incorrect';
 
@@ -73,6 +74,15 @@ const Scenario6 = () => {
     setFormError('');
     setHasSubmitted(true);
   };
+
+  useEffect(() => {
+    if (hasSubmitted && result) {
+      saveAnswer('scn-06', {
+        answer: selectedAnswer,
+        score: result.total,
+      });
+    }
+  }, [hasSubmitted, result, selectedAnswer]);
 
   return (
     <section className="pt-28 pb-16 bg-black/95 min-h-screen">
