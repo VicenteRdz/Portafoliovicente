@@ -17,9 +17,9 @@ import {
   getResults,
   clearResults,
   getUserAlias,
-  clearUserAlias,
   saveQuizSession,
   getQuizRanking,
+  clearQuizRanking,
   type QuizResultsMap,
 } from '@/app/utils/quizStorage';
 
@@ -121,8 +121,24 @@ export function PD02ResultsPage() {
   }, [alias, summary.completedCount, summary.totalScore, summary.percentage, ranking]);
 
   const handleReset = () => {
+    const confirmReset = window.confirm(
+      'Se borrará el intento actual del quiz, pero el alias y el ranking local se conservarán. ¿Deseas continuar?'
+    );
+
+    if (!confirmReset) return;
+
     clearResults();
-    clearUserAlias();
+    window.location.reload();
+  };
+
+  const handleClearRanking = () => {
+    const confirmClear = window.confirm(
+      'Se borrará el ranking local de sesiones guardadas en este navegador. ¿Deseas continuar?'
+    );
+
+    if (!confirmClear) return;
+
+    clearQuizRanking();
     window.location.reload();
   };
 
@@ -156,7 +172,7 @@ export function PD02ResultsPage() {
           </p>
         </div>
 
-        {/* alias */}
+        {/* Alias */}
         <div className="mb-8 p-5 bg-[#1a1a1a]/40 border border-[#d4a574]/20">
           <div className="flex items-center gap-3">
             <User className="w-5 h-5 text-[#cc6633]" />
@@ -169,7 +185,7 @@ export function PD02ResultsPage() {
           </div>
         </div>
 
-        {/* métricas principales */}
+        {/* Métricas principales */}
         <div className="grid lg:grid-cols-3 gap-6 mb-10">
           <div className="bg-[#1a1a1a]/40 border border-[#d4a574]/20 p-6">
             <p className="text-sm font-mono text-[#cc6633] mb-2">Escenarios completados</p>
@@ -191,7 +207,7 @@ export function PD02ResultsPage() {
           </div>
         </div>
 
-        {/* nivel de riesgo */}
+        {/* Nivel de riesgo */}
         <div className="mb-10 p-6 bg-[#1a1a1a]/40 border border-[#d4a574]/20">
           <div className="flex items-start gap-4">
             <ShieldAlert className="w-7 h-7 text-[#cc6633] flex-shrink-0 mt-1" />
@@ -206,7 +222,7 @@ export function PD02ResultsPage() {
           </div>
         </div>
 
-        {/* análisis básico */}
+        {/* Análisis básico */}
         <div className="grid lg:grid-cols-3 gap-6 mb-10">
           <div className="bg-[#1a1a1a]/40 border border-[#d4a574]/20 p-6">
             <div className="flex items-center gap-2 mb-3">
@@ -237,7 +253,7 @@ export function PD02ResultsPage() {
           </div>
         </div>
 
-        {/* progreso */}
+        {/* Progreso */}
         <div className="mb-10">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-mono text-[#cc6633]">Progreso del quiz</span>
@@ -264,7 +280,7 @@ export function PD02ResultsPage() {
           </div>
         )}
 
-        {/* detalle por escenario */}
+        {/* Detalle por escenario */}
         <div className="mb-10">
           <h2 className="text-xl font-mono text-[#d4a574] mb-4">
             Detalle por escenario
@@ -313,7 +329,7 @@ export function PD02ResultsPage() {
           </div>
         </div>
 
-        {/* ranking local */}
+        {/* Ranking local */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">
             <ListOrdered className="w-5 h-5 text-[#cc6633]" />
@@ -341,6 +357,9 @@ export function PD02ResultsPage() {
                       <p className="text-xs font-mono text-[#d4a574]/60 mt-1">
                         Escenarios completados: {item.completedCount}
                       </p>
+                      <p className="text-xs font-mono text-[#d4a574]/50 mt-1">
+                        Fecha: {new Date(item.timestamp).toLocaleString()}
+                      </p>
                     </div>
 
                     <div className="text-left md:text-right">
@@ -358,7 +377,7 @@ export function PD02ResultsPage() {
           </div>
         </div>
 
-        {/* acciones */}
+        {/* Acciones */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             to="/proyectos/proj-02/fase-2"
@@ -374,7 +393,16 @@ export function PD02ResultsPage() {
             className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-black/30 border border-[#d4a574]/20 text-[#d4a574] font-mono hover:border-[#cc6633]/40 hover:text-[#cc6633] transition-all"
           >
             <RotateCcw className="w-4 h-4" />
-            Reiniciar resultados
+            Reiniciar intento actual
+          </button>
+
+          <button
+            type="button"
+            onClick={handleClearRanking}
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-black/30 border border-red-500/30 text-red-400 font-mono hover:bg-red-500/10 transition-all"
+          >
+            <RotateCcw className="w-4 h-4" />
+            Borrar ranking local
           </button>
         </div>
       </div>
