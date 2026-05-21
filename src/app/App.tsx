@@ -15,6 +15,8 @@ import { PD02PlatformsPage } from '@/app/pages/pd02/PD02PlatformsPage';
 import { PD02QuizIndex } from '@/app/pages/pd02/PD02QuizIndex';
 import { PD02QuizPage } from '@/app/pages/pd02/PD02QuizPage';
 import { PD02ResultsPage } from '@/app/pages/pd02/PD02ResultsPage';
+import { CertificationsIndex } from '@/app/pages/certifications/CertificationsIndex';
+import { CertificationsPage } from '@/app/pages/certifications/CertificationsPage';
 
 export default function App() {
   return (
@@ -37,6 +39,8 @@ export default function App() {
             <Route path="/proyectos/proj-02/fase-2" element={<PD02QuizIndex />} />
             <Route path="/proyectos/proj-02/fase-2/escenario/:id" element={<PD02QuizPage />} />
             <Route path="/proyectos/proj-02/resultados" element={<PD02ResultsPage />} />
+            <Route path="/certificaciones" element={<CertificationsIndex />} />
+            <Route path="/certificaciones/:id" element={<CertificationsPage />} />
           </Routes>
 
           <Footer />

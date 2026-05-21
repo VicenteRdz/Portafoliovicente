@@ -4,14 +4,15 @@ import { useState } from 'react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-const navLinks = [
-  { to: '/', label: 'Inicio' },
-  { to: '/actividades', label: 'Actividades' },
-  { to: '/proyectos', label: 'Proyectos' },
-  { to: '/hall-of-fame', label: 'Road to Hall of Fame' },
-  { to: '/#contacto', label: 'Contacto' },
-];
+
+  const navLinks = [
+    { to: '/', label: 'Inicio' },
+    { to: '/actividades', label: 'Actividades' },
+    { to: '/proyectos', label: 'Proyectos' },
+    { to: '/certificaciones', label: 'Certificaciones' },
+    { to: '/hall-of-fame', label: 'Road to Hall of Fame' },
+    { to: '/#contacto', label: 'Contacto' },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-[#d4a574]/20">
@@ -23,9 +24,14 @@ const navLinks = [
               <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-[#cc6633]" />
               <div className="absolute inset-0 bg-[#cc6633] blur-md opacity-50"></div>
             </div>
+
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base text-[#d4a574] font-mono tracking-wide">José Vicente Rodríguez Rivera</span>
-              <span className="text-xs sm:text-sm text-[#cc6633] font-mono">GearToTheEnd</span>
+              <span className="text-sm sm:text-base text-[#d4a574] font-mono tracking-wide">
+                José Vicente Rodríguez Rivera
+              </span>
+              <span className="text-xs sm:text-sm text-[#cc6633] font-mono">
+                GearToTheEnd
+              </span>
             </div>
           </div>
 
@@ -45,8 +51,12 @@ const navLinks = [
 
           {/* Course Info - Desktop */}
           <div className="hidden lg:flex flex-col items-end">
-            <span className="text-xs text-[#d4a574]/60 font-mono">CNO V - Seguridad Informática</span>
-            <span className="text-xs text-[#d4a574]/60 font-mono">Octavo Semestre</span>
+            <span className="text-xs text-[#d4a574]/60 font-mono">
+              CNO V - Seguridad Informática
+            </span>
+            <span className="text-xs text-[#d4a574]/60 font-mono">
+              Octavo Semestre
+            </span>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,10 +83,17 @@ const navLinks = [
                   {link.label}
                 </Link>
               ))}
+
               <div className="pt-4 border-t border-[#d4a574]/20 flex flex-col gap-1">
-                <span className="text-xs text-[#d4a574]/60 font-mono">CNO V - Seguridad Informática</span>
-                <span className="text-xs text-[#d4a574]/60 font-mono">Universidad Politécnica de San Luis Potosí</span>
-                <span className="text-xs text-[#d4a574]/60 font-mono">Octavo Semestre</span>
+                <span className="text-xs text-[#d4a574]/60 font-mono">
+                  CNO V - Seguridad Informática
+                </span>
+                <span className="text-xs text-[#d4a574]/60 font-mono">
+                  Universidad Politécnica de San Luis Potosí
+                </span>
+                <span className="text-xs text-[#d4a574]/60 font-mono">
+                  Octavo Semestre
+                </span>
               </div>
             </div>
           </nav>
