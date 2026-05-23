@@ -15,7 +15,7 @@ export function ActivitiesIndex() {
             className="inline-flex items-center gap-2 font-mono text-[#d4a574]/70 hover:text-[#cc6633] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Volver al inicio
+            Volver al menú principal
           </Link>
         </div>
 
@@ -42,7 +42,7 @@ export function ActivitiesIndex() {
             className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#cc6633]/20 border border-[#cc6633] text-[#cc6633] font-mono hover:bg-[#cc6633]/30 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
-            Volver al inicio
+            Volver al menú principal
           </Link>
         </div>
       </div>

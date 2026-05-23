@@ -1,3 +1,5 @@
+import React from 'react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ClipboardList, ArrowRight } from 'lucide-react';
 import { PROJECTS } from '@/app/data/projects';
@@ -7,7 +9,16 @@ export function ProjectsIndex() {
     <section className="pt-28 pb-16 bg-black/95 min-h-screen">
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
+        {/* Volver */}
+        <div className="mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 font-mono text-[#d4a574]/70 hover:text-[#cc6633] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Volver al menú principal
+          </Link>
+        </div>
         {/* Header */}
         <div className="mb-10 flex items-center gap-3">
           <ClipboardList className="w-6 h-6 text-[#cc6633]" />
