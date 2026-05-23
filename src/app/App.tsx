@@ -17,10 +17,15 @@ import { PD02QuizPage } from '@/app/pages/pd02/PD02QuizPage';
 import { PD02ResultsPage } from '@/app/pages/pd02/PD02ResultsPage';
 import { CertificationsIndex } from '@/app/pages/certifications/CertificationsIndex';
 import { CertificationsPage } from '@/app/pages/certifications/CertificationsPage';
+import { ScrollToTop } from '@/app/components/ScrollToTop';
+import Project3 from '@/app/pages/projects/Project3';
 
 export default function App() {
   return (
     <HashRouter>
+
+      <ScrollToTop />
+
       <div className="min-h-screen bg-[#0a0a0a] text-[#d4a574] overflow-x-hidden">
         <div className="relative z-10">
           <Header />
@@ -41,6 +46,7 @@ export default function App() {
             <Route path="/proyectos/proj-02/resultados" element={<PD02ResultsPage />} />
             <Route path="/certificaciones" element={<CertificationsIndex />} />
             <Route path="/certificaciones/:id" element={<CertificationsPage />} />
+            <Route path="/proyectos/proj-03" element={<Project3 />} />
           </Routes>
 
           <Footer />

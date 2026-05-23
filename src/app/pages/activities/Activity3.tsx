@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import { ACTIVITIES } from '@/app/data/activities';
 
 const Activity3 = () => {
@@ -10,6 +12,17 @@ const Activity3 = () => {
   return (
     <section className="pt-28 pb-16 bg-black/95 min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Volver */}
+        <div className="mb-6">
+          <Link
+            to="/actividades"
+            className="inline-flex items-center gap-2 font-mono text-[#d4a574]/70 hover:text-[#cc6633] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Volver al índice de actividades
+          </Link>
+        </div>
+
         {/* Título */}
         <h1 className="text-2xl sm:text-3xl font-mono text-[#d4a574] mb-6">
           {activity.title}
@@ -220,6 +233,16 @@ iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --stat
               Documentación de iptables / netfilter (comandos y módulos comunes).
             </li>
           </ul>
+        </div>
+        {/* Navegación inferior */}
+        <div className="mt-12 flex flex-col sm:flex-row gap-4">
+          <Link
+            to="/actividades"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#cc6633]/20 border border-[#cc6633] text-[#cc6633] font-mono hover:bg-[#cc6633]/30 transition-all"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Volver al índice
+          </Link>
         </div>
       </div>
     </section>

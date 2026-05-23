@@ -7,6 +7,9 @@ import Activity4 from './activities/Activity4';
 import Activity5 from './activities/Activity5'; 
 import Activity6 from './activities/Activity6'; 
 import Activity7 from './activities/Activity7'; 
+import Activity16 from './activities/Activity16'; 
+import Activity17 from './activities/Activity17'; 
+import Activity18 from './activities/Activity18'; 
 
 export function ActivityPage() {
   const { id } = useParams();
@@ -26,6 +29,12 @@ export function ActivityPage() {
     return <Activity6 />; 
   } else if (id === 'act-07') {
     return <Activity7 />; 
+  } else if (id === 'act-16') {
+    return <Activity16 />; 
+  } else if (id === 'act-17') {
+    return <Activity17 />; 
+  } else if (id === 'act-18') {
+    return <Activity18 />; 
   }
 
   return <div>Actividad no encontrada</div>;

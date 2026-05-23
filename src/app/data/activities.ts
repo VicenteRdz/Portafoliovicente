@@ -54,5 +54,23 @@ export const ACTIVITIES: Activity[] = [
     title: 'Actividad 07 - La caída del mayor traficante de la dark web (Oxymonster)',
     pdfFile: '179954-act07.pdf',
     references: [{ label: '...', value: '...' }],
+  },
+  {
+    id: 'act-16',
+    title: 'Actividad 16 - Dilemas éticos en ciberseguridad',
+    pdfFile: 'act16-Equipo03.pdf',
+    references: [{ label: '...', value: '...' }],
+  },
+  {
+    id: 'act-17',
+    title: 'Actividad 17 - Evaluación de Vulnerabilidades con CVSS v3.1',
+    pdfFile: 'act17-Equipo03.pdf',
+    references: [{ label: '...', value: '...' }],
+  },
+  {
+    id: 'act-18',
+    title: 'Actividad 18 - Análisis de intrusiones con el modelo diamante',
+    pdfFile: 'act18-Equipo03.pdf',
+    references: [{ label: '...', value: '...' }],
   }
 ];
